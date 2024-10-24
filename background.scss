@@ -1,0 +1,389 @@
+$ground: #7548D6;
+$window: lighten(#d3b57e, 20%);
+$side-build: #e8dcf9;
+$back: #F6F5FE;
+$bush: #5adda0;
+$balloon: #df96f6;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.container {
+  height: 500px;
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+  background: $back;
+  border-radius: 50%;
+  animation: balloon 2s forwards infinite;
+}
+
+.ground {
+  border: 3px solid $ground;
+  position: absolute;
+  top: 350px;
+  left: 100px;
+  border-radius: 5px;
+  animation: ground-anim 3s forwards infinite;
+}
+
+.ground-one {
+  height: 0px;
+  border: 2px solid $ground;
+  position: absolute;
+  top: 380px;
+  left: 130px;
+  border-radius: 5px;
+  animation: ground-one-anim 3s forwards infinite;
+}
+
+.building-left {
+  width: 60px;
+  border-left: 3px solid $side-build;
+  position: absolute;
+  top: 230px;
+  left: 140px;
+  background: $side-build;
+  animation: building-left 3s forwards infinite;
+
+  .top {
+    border: 2px solid $side-build;
+    position: absolute;
+    top: -2px;
+    left: -13px;
+    border-radius: 5px;
+    animation: building-left-top 3s forwards infinite;
+  }
+}
+
+.building {
+  width: 75px;
+  border: 3px solid $ground;
+  border-bottom: none;
+  border-top: none;
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  animation: building 3s forwards infinite;
+
+  .top {
+    border: 2px solid $ground;
+    position: absolute;
+    top: -2px;
+    left: -17px;
+    border-radius: 5px;
+    animation: building-top 3s forwards infinite;
+  }
+}
+
+@keyframes building {
+  0% {
+    height: 0px;
+  }
+  50%, 80%, 100% {
+    height: 200px;
+  }
+}
+
+@keyframes building-top {
+  0% {
+    width: 0px;
+  }
+  50%, 80%, 100% {
+    width: 106px;
+  }
+}
+
+@keyframes ground-anim {
+  0% {
+    width: 0px;
+  }
+  50%, 80%, 100% {
+    width: 300px;
+  }
+}
+
+@keyframes ground-one-anim {
+  0% {
+    width: 0px;
+  }
+  50%, 80%, 100% {
+    width: 40px;
+  }
+}
+
+@keyframes building-left {
+  0% {
+    height: 0px;
+  }
+  50%, 80%, 100% {
+    height: 120px;
+  }
+}
+
+@keyframes building-left-top {
+  0% {
+    width: 0px;
+  }
+  50%, 80%, 100% {
+    width: 70px;
+  }
+}
+
+.window {
+  height: 7px;
+  border: 2px solid $ground;
+  background: $window;
+  position: absolute;
+  border-radius: 2px;
+  animation: windows 3s forwards infinite;
+}
+
+.window-1 {
+  @extend .window;
+  top: 20px;
+  left: 20px;
+}
+
+.window-2 {
+  @extend .window;
+  top: 40px;
+  right: 21px;
+}
+
+.window-3 {
+  @extend .window;
+  top: 60px;
+  left: 20px;
+}
+
+.window-4 {
+  @extend .window;
+  top: 80px;
+  right: 21px;
+}
+
+.window-5 {
+  @extend .window;
+  top: 100px;
+  left: 20px;
+}
+
+.window-6 {
+  @extend .window;
+  top: 120px;
+  right: 21px;
+}
+
+.window-7 {
+  @extend .window;
+  top: 140px;
+  left: 20px;
+}
+
+.window-8 {
+  @extend .window;
+  top: 160px;
+  right: 21px;
+}
+
+@keyframes windows {
+  0% {
+    width: 0px;
+  }
+  50%, 80%, 100% {
+    width: 30px;
+  }
+}
+
+.building-right {
+  width: 60px;
+  border-left: 3px solid $side-build;
+  position: absolute;
+  top: 190px;
+  right: 160px;
+  background: $side-build;
+  animation: building-right 3s forwards infinite;
+
+  .top {
+    border: 2px solid $side-build;
+    position: absolute;
+    top: -2px;
+    right: -11px;
+    border-radius: 5px;
+    animation: building-right-top 3s forwards infinite;
+  }
+}
+
+@keyframes building-right {
+  0% {
+    height: 0px;
+  }
+  50%, 80%, 100% {
+    height: 160px;
+  }
+}
+
+@keyframes building-right-top {
+  0% {
+    width: 0px;
+  }
+  50%, 80%, 100% {
+    width: 70px;
+  }
+}
+
+.bush {
+  z-index: 2;
+  background: $bush;
+  width: 40px;
+  height: 20px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  position: absolute;
+  top: 330px;
+  animation: bush 3s forwards infinite;
+}
+
+.bush-one {
+  @extend .bush;
+  left: 120px;
+}
+
+.bush-two {
+  @extend .bush;
+  right: 160px;
+}
+
+.bush-three {
+  @extend .bush;
+  height: 30px;
+  top: 320px;
+  right: 140px;
+}
+
+.stem-one {
+  height: 60px;
+  width: 0px;
+  border: 2px solid $ground;
+  position: absolute;
+  top: 280px;
+  left: 136px;
+  animation: bush 3s forwards infinite;
+
+  .branch {
+    height: 15px;
+    width: 0px;
+    border: 2px solid $ground;
+    position: absolute;
+    transform: rotate(40deg);
+    left: 5px;
+    z-index: 3;
+  }
+
+  .leaves-one {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: $bush;
+    position: absolute;
+    left: -20px;
+    top: -45px;
+  }
+
+  .leaves-two {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: $bush;
+    position: absolute;
+    left: -13px;
+    top: -60px;
+  }
+}
+
+@keyframes bush {
+  0% {
+    transform: scale(0);
+  }
+  50%, 80%, 100% {
+    transform: scale(1);
+  }
+}
+
+.balloon {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 60px;
+  left: 100px;
+  animation: balloon 3s forwards infinite;
+
+  .head {
+    width: 40px;
+    height: 48px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    background: $balloon;
+  }
+
+  .base {
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    top: 47px;
+    left: 28px;
+    background: $balloon;
+  }
+}
+
+@keyframes balloon {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Button Styles Below */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* Position the button below the background */
+}
+
+.button {
+  padding: 15px 60px;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 50px;
+  border: 2px solid rgb(0, 0, 0);
+  font-family: "montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  background-color: transparent;
+  color: purple;
+  animation: fadetext 0.5s;
+  transition: color 0.4s linear, background-color 0.4s linear;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 5px white, 0 0 10px purple, 0 0 10px purple, 0 0 10px purple;
+}
+
+.right-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  margin-top: 30px;
+  text-align: center;
+  color: black;
+  margin-bottom: -20px;
+}
+
